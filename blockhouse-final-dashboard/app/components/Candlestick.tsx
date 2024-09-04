@@ -75,7 +75,7 @@ const CandleStick: React.FC<CandleStickProps> = ({
     return ticks;
   };
 
-  // Determine an appropriate step value per tick based on the range
+  // Determine an appropriate step value per tickbased on the range
   const step = range / 5 > 1 ? range / 5 : 1;
   const ticks = generateTicks(minHeight - step, maxHeight + step, step);
 
