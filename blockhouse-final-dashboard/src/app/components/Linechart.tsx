@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 interface LineChartProps {
@@ -16,14 +17,16 @@ interface LineChartProps {
 }
 
 const LineChart: React.FC<LineChartProps> = ({ data, width, height }) => (
-  <RechartsLineChart width={width} height={height} data={data}>
-    <CartesianGrid strokeDasharray="3 3" />
-    <XAxis dataKey="name" />
-    <YAxis />
-    <Tooltip />
-    <Legend />
-    <Line type="monotone" dataKey="value" stroke="#8884d8" />
-  </RechartsLineChart>
+  <ResponsiveContainer width="100%" height={height}>
+    <RechartsLineChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line type="monotone" dataKey="value" stroke="#8884d8" />
+    </RechartsLineChart>
+  </ResponsiveContainer>
 );
 
 export default LineChart;
